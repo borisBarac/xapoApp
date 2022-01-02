@@ -8,10 +8,11 @@
 import Foundation
 import Combine
 
+
 protocol DataServiceProtocol {
     var session: URLSession { get set }
     var urlBuilder: UrlBuilderProtocol { get set }
-    func getTrending(tag: String) -> AnyPublisher<RepoData, HTTPError>
+    func getTrending(tag: String) -> AnyPublisher<[ProjectItem], HTTPError>
 }
 
 final class DataService: DataServiceProtocol {
@@ -23,9 +24,9 @@ final class DataService: DataServiceProtocol {
         self.urlBuilder = urlBuilder
     }
     
-    func getTrending(tag: String) -> AnyPublisher<RepoData, HTTPError> {
+    func getTrending(tag: String) -> AnyPublisher<[ProjectItem], HTTPError> {
         guard let url = urlBuilder.build(tag: tag) else {
-            return Fail<RepoData, HTTPError>(error: HTTPError.wrongUrl).eraseToAnyPublisher()
+            return Fail<[ProjectItem], HTTPError>(error: HTTPError.wrongUrl).eraseToAnyPublisher()
         }
         
         return session.dataTaskPublisher(for: url)
@@ -41,8 +42,8 @@ final class DataService: DataServiceProtocol {
                 return data
             }
             .decode(type: BERepoData.self, decoder: JSONDecoder())
-            .tryMap { _ in
-                RepoData(total_count: 253, items: [])
+            .tryMap { beRepoData in
+                beRepoData.items
             }
             .mapError { error -> HTTPError in
                 guard let httpError = error as? HTTPError else {

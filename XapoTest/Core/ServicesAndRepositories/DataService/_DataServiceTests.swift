@@ -37,7 +37,7 @@ class _DataServiceTests: XCTestCase {
         let result = try awaitCompletion(of: pub)
 
         XCTAssertNotNil(result)
-        XCTAssertEqual(result.first?.total_count, 253)
+        XCTAssertGreaterThan(result.first?.count ?? -1, 0, "No elements have been parsed")
     }
 
     func testNoInternet() throws {
@@ -59,12 +59,13 @@ class _DataServiceTests: XCTestCase {
 
             switch httpError {
             case .serverDown:
-                // passed :) XC needs XCTPass()
+                // passed :)
+                // XCTest needs XCTPass()
                 break
             default:
                 XCTFail("Wrong error type")
             }
         }
     }
-    
+
 }

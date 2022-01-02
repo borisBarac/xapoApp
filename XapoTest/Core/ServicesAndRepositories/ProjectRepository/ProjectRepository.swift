@@ -16,33 +16,34 @@ enum SaveStatus {
 protocol ProjectRepository {
     var lastSyncDate: CurrentValueSubject<Date?, Never> { get set }
 
-    func findProject(id: String) -> RepoData.Item?
-    func listAll() -> AnyCollection<RepoData.Item>
+    func findProject(id: String) -> ProjectItem?
+    func listAll() -> AnyCollection<ProjectItem>
     func removeAllApps()
-    func save(apps: [RepoData.Item]) -> AnyPublisher<Void, Never>
+    func save(projects: [ProjectItem]) -> AnyPublisher<Void, Never>
 }
 
 final class InMemoryProjectRepository: ProjectRepository {
-    private var allProjects: [String: RepoData.Item] = [:]
+    private var allProjects: [String: ProjectItem] = [:]
     var lastSyncDate = CurrentValueSubject<Date?, Never>(nil)
 
-    func findProject(id: String) -> RepoData.Item? {
+    func findProject(id: String) -> ProjectItem? {
         return allProjects[id]
     }
 
-    func listAll() -> AnyCollection<RepoData.Item> {
+    func listAll() -> AnyCollection<ProjectItem> {
         let sortedApps = allProjects.map { $0.value }.sorted { $0.forks < $1.forks }
         return AnyCollection(sortedApps)
     }
 
     func removeAllApps() {
         allProjects.removeAll(keepingCapacity: true)
+        lastSyncDate.value = nil
     }
 
-    func save(apps: [RepoData.Item]) -> AnyPublisher<Void, Never> {
+    func save(projects: [ProjectItem]) -> AnyPublisher<Void, Never> {
         return Future<Void, Never> { promise in
-            apps.forEach {
-                self.allProjects[$0.id] = $0
+            projects.forEach {
+                self.allProjects[$0.id.string] = $0
             }
             self.lastSyncDate.value = Date()
         }.eraseToAnyPublisher()
