@@ -20,20 +20,22 @@ class _DataServiceTests: XCTestCase {
         dataService = DataService(session: URLSession.shared, urlBuilder: UrlBuilder())
     }
 
-    override class func tearDown() {
+    override func tearDown() {
+        Mocker.removeAll()
+        Mocker.mode = .optout
         super.tearDown()
     }
 
-    func testNormalRequestV2() throws {
+    func testNormalRequest() throws {
         let tag = "swift"
         let url = UrlBuilder().build(tag: tag)!
         Mock(url: url, dataType: .json, statusCode: 200, data: [
             .get : try! Data(contentsOf: MockedData.exampleJSON) // Data containing the JSON response
         ]).register()
 
-        let pub = dataService.getTrending(tag: "swift")
+        let pub = dataService.getTrending(tag: tag)
         let result = try awaitCompletion(of: pub)
-        
+
         XCTAssertNotNil(result)
         XCTAssertEqual(result.first?.total_count, 253)
     }
@@ -64,5 +66,5 @@ class _DataServiceTests: XCTestCase {
             }
         }
     }
-
+    
 }
