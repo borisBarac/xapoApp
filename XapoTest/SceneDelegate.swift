@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+
+    var can = Set<AnyCancellable>()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -23,6 +26,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
+
+
+//        DataService(session: URLSession.shared, urlBuilder: UrlBuilder()).getTrending(tag: "iOS")
+//            .sink { completion in
+//            switch completion {
+//            case .finished:
+//                print("🏁 finished")
+//            case .failure(let error):
+//                print("❗️ failure: \(error)")
+//            }
+//        } receiveValue: { data in
+//            print(22)
+//        }.store(in: &can)
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

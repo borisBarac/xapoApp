@@ -12,9 +12,18 @@
 		04B3029727820BC1001077BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029627820BC1001077BA /* ViewController.swift */; };
 		04B3029C27820BC2001077BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B3029B27820BC2001077BA /* Assets.xcassets */; };
 		04B3029F27820BC2001077BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B3029D27820BC2001077BA /* LaunchScreen.storyboard */; };
-		04B302AA27820BC2001077BA /* XapoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302A927820BC2001077BA /* XapoTestTests.swift */; };
+		04B302AA27820BC2001077BA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302A927820BC2001077BA /* Helpers.swift */; };
 		04B302B427820BC2001077BA /* XapoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302B327820BC2001077BA /* XapoTestUITests.swift */; };
 		04B302B627820BC2001077BA /* XapoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302B527820BC2001077BA /* XapoTestUITestsLaunchTests.swift */; };
+		04B302C9278213C6001077BA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302C8278213C6001077BA /* Model.swift */; };
+		04B302CB278214B9001077BA /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302CA278214B9001077BA /* DataService.swift */; };
+		04B302CD2782163D001077BA /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302CC2782163D001077BA /* HTTPError.swift */; };
+		04B302CF278219FB001077BA /* _HttpErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302CE278219FB001077BA /* _HttpErrorTests.swift */; };
+		04B302D327821EE9001077BA /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302D227821EE9001077BA /* UrlBuilder.swift */; };
+		04B302D827822C8B001077BA /* _UrlBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302D727822C8B001077BA /* _UrlBuilderTests.swift */; };
+		04B302DA27822D9A001077BA /* _DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302D927822D9A001077BA /* _DataServiceTests.swift */; };
+		04B302DF27823407001077BA /* ApiMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 04B302DE27823407001077BA /* ApiMock.json */; };
+		04B302E2278250C8001077BA /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 04B302E1278250C8001077BA /* Mocker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +52,18 @@
 		04B3029E27820BC2001077BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B302A027820BC2001077BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04B302A527820BC2001077BA /* XapoTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XapoTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04B302A927820BC2001077BA /* XapoTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XapoTestTests.swift; sourceTree = "<group>"; };
+		04B302A927820BC2001077BA /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		04B302AF27820BC2001077BA /* XapoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XapoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B302B327820BC2001077BA /* XapoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XapoTestUITests.swift; sourceTree = "<group>"; };
 		04B302B527820BC2001077BA /* XapoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XapoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04B302C8278213C6001077BA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		04B302CA278214B9001077BA /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		04B302CC2782163D001077BA /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		04B302CE278219FB001077BA /* _HttpErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _HttpErrorTests.swift; sourceTree = "<group>"; };
+		04B302D227821EE9001077BA /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
+		04B302D727822C8B001077BA /* _UrlBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UrlBuilderTests.swift; sourceTree = "<group>"; };
+		04B302D927822D9A001077BA /* _DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DataServiceTests.swift; sourceTree = "<group>"; };
+		04B302DE27823407001077BA /* ApiMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ApiMock.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B302E2278250C8001077BA /* Mocker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				04B3029127820BC1001077BA /* XapoTest */,
-				04B302A827820BC2001077BA /* XapoTestTests */,
+				04B302A827820BC2001077BA /* TestsHelpers */,
 				04B302B227820BC2001077BA /* XapoTestUITests */,
 				04B3029027820BC1001077BA /* Products */,
 			);
@@ -98,19 +116,21 @@
 			isa = PBXGroup;
 			children = (
 				04B302C2278211AA001077BA /* Resources */,
+				04B302C4278212FF001077BA /* UI */,
+				04B302C3278212F2001077BA /* Core */,
 				04B3029227820BC1001077BA /* AppDelegate.swift */,
 				04B3029427820BC1001077BA /* SceneDelegate.swift */,
-				04B3029627820BC1001077BA /* ViewController.swift */,
 			);
 			path = XapoTest;
 			sourceTree = "<group>";
 		};
-		04B302A827820BC2001077BA /* XapoTestTests */ = {
+		04B302A827820BC2001077BA /* TestsHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				04B302A927820BC2001077BA /* XapoTestTests.swift */,
+				04B302A927820BC2001077BA /* Helpers.swift */,
+				04B302DE27823407001077BA /* ApiMock.json */,
 			);
-			path = XapoTestTests;
+			path = TestsHelpers;
 			sourceTree = "<group>";
 		};
 		04B302B227820BC2001077BA /* XapoTestUITests */ = {
@@ -132,6 +152,68 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		04B302C3278212F2001077BA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				04B302D62782263F001077BA /* Helpers */,
+				04B302C7278213A8001077BA /* UseCases */,
+				04B302C62782138D001077BA /* ServicesAndRepositories */,
+				04B302C527821384001077BA /* Model */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		04B302C4278212FF001077BA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				04B3029627820BC1001077BA /* ViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		04B302C527821384001077BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04B302C8278213C6001077BA /* Model.swift */,
+				04B302D227821EE9001077BA /* UrlBuilder.swift */,
+				04B302D727822C8B001077BA /* _UrlBuilderTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04B302C62782138D001077BA /* ServicesAndRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				04B302CC2782163D001077BA /* HTTPError.swift */,
+				04B302CE278219FB001077BA /* _HttpErrorTests.swift */,
+				04B302D127821D2A001077BA /* DataService */,
+			);
+			path = ServicesAndRepositories;
+			sourceTree = "<group>";
+		};
+		04B302C7278213A8001077BA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		04B302D127821D2A001077BA /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				04B302CA278214B9001077BA /* DataService.swift */,
+				04B302D927822D9A001077BA /* _DataServiceTests.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		04B302D62782263F001077BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +230,9 @@
 			dependencies = (
 			);
 			name = XapoTest;
+			packageProductDependencies = (
+				04B302E1278250C8001077BA /* Mocker */,
+			);
 			productName = XapoTest;
 			productReference = 04B3028F27820BC1001077BA /* XapoTest.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +305,9 @@
 				Base,
 			);
 			mainGroup = 04B3028627820BC1001077BA;
+			packageReferences = (
+				04B302E0278250C8001077BA /* XCRemoteSwiftPackageReference "Mocker" */,
+			);
 			productRefGroup = 04B3029027820BC1001077BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -245,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B302DF27823407001077BA /* ApiMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +354,10 @@
 				04B3029727820BC1001077BA /* ViewController.swift in Sources */,
 				04B3029327820BC1001077BA /* AppDelegate.swift in Sources */,
 				04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */,
+				04B302C9278213C6001077BA /* Model.swift in Sources */,
+				04B302CD2782163D001077BA /* HTTPError.swift in Sources */,
+				04B302D327821EE9001077BA /* UrlBuilder.swift in Sources */,
+				04B302CB278214B9001077BA /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +365,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B302AA27820BC2001077BA /* XapoTestTests.swift in Sources */,
+				04B302D827822C8B001077BA /* _UrlBuilderTests.swift in Sources */,
+				04B302CF278219FB001077BA /* _HttpErrorTests.swift in Sources */,
+				04B302AA27820BC2001077BA /* Helpers.swift in Sources */,
+				04B302DA27822D9A001077BA /* _DataServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +445,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -410,6 +507,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -598,6 +696,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04B302E0278250C8001077BA /* XCRemoteSwiftPackageReference "Mocker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WeTransfer/Mocker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04B302E1278250C8001077BA /* Mocker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04B302E0278250C8001077BA /* XCRemoteSwiftPackageReference "Mocker" */;
+			productName = Mocker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04B3028727820BC1001077BA /* Project object */;
 }
