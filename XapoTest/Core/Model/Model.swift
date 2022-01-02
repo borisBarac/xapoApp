@@ -16,4 +16,12 @@ struct BERepoData: Codable {
 /// In this simple case is the same object basically
 struct RepoData: Codable {
     let total_count: Int
+    let items: [Item]
+}
+
+extension RepoData {
+    struct Item: Codable {
+        let id: String
+        let forks: Int
+    }
 }
