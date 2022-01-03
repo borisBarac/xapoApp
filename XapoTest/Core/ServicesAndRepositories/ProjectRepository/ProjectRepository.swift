@@ -19,6 +19,10 @@ protocol ProjectRepository {
     func findProject(id: String) -> ProjectItem?
     func listAll() -> AnyCollection<ProjectItem>
     func removeAllApps()
+
+    /// keeping future here in protocol
+    /// because is this gets extended to core data or something, saving is mostly a ASYNC operation, while reading is SYNC
+    @discardableResult
     func save(projects: [ProjectItem]) -> AnyPublisher<Void, Never>
 }
 
@@ -40,6 +44,7 @@ final class InMemoryProjectRepository: ProjectRepository {
         lastSyncDate.value = nil
     }
 
+    @discardableResult
     func save(projects: [ProjectItem]) -> AnyPublisher<Void, Never> {
         return Future<Void, Never> { promise in
             projects.forEach {

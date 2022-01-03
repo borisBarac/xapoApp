@@ -11,7 +11,7 @@ import Mocker
 @testable import XapoTest
 
 class _DataServiceTests: XCTestCase {
-
+    let tag = "swift"
     var dataService: DataService!
     var mockError: Mock!
 
@@ -27,11 +27,7 @@ class _DataServiceTests: XCTestCase {
     }
 
     func testNormalRequest() throws {
-        let tag = "swift"
-        let url = UrlBuilder().build(tag: tag)!
-        Mock(url: url, dataType: .json, statusCode: 200, data: [
-            .get : try! Data(contentsOf: MockedData.exampleJSON) // Data containing the JSON response
-        ]).register()
+        mockSucessfullApiCall()
 
         let pub = dataService.getTrending(tag: tag)
         let result = try awaitCompletion(of: pub)
@@ -41,10 +37,7 @@ class _DataServiceTests: XCTestCase {
     }
 
     func testNoInternet() throws {
-        let tag = "NoData"
-        let url = UrlBuilder().build(tag: tag)!
-        Mock(url: url, dataType: .json, statusCode: 500, data: [.get: Data()],
-             requestError: URLError(URLError.cannotConnectToHost)).register()
+        mockApiError()
 
         let pub = DataService(session: URLSession.shared, urlBuilder: UrlBuilder()).getTrending(tag: tag)
 
@@ -67,5 +60,35 @@ class _DataServiceTests: XCTestCase {
             }
         }
     }
+}
 
+class _CachedDataService: _DataServiceTests {
+    func testCashing() throws {
+        mockSucessfullApiCall()
+
+        let repository = InMemoryProjectRepository()
+        dataService = CachedDataService(session: URLSession.shared, urlBuilder: UrlBuilder(), repository: repository)
+
+        let pub = dataService.getTrending(tag: tag)
+        let result = try awaitCompletion(of: pub)
+
+        XCTAssertNotNil(result)
+        XCTAssertGreaterThan(repository.listAll().count, 0, "Caching failed")
+    }
+}
+
+private extension _DataServiceTests {
+    func mockSucessfullApiCall() {
+        let url = UrlBuilder().build(tag: tag)!
+        Mock(url: url, dataType: .json, statusCode: 200, data: [
+            .get : try! Data(contentsOf: MockedData.exampleJSON) // Data containing the JSON response
+        ]).register()
+    }
+
+    func mockApiError() {
+        let url = UrlBuilder().build(tag: tag)!
+        Mock(url: url, dataType: .json, statusCode: 500, data: [.get: Data()],
+             requestError: URLError(URLError.cannotConnectToHost)).register()
+
+    }
 }

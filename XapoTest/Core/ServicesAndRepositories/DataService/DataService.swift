@@ -15,7 +15,7 @@ protocol DataServiceProtocol {
     func getTrending(tag: String) -> AnyPublisher<[ProjectItem], HTTPError>
 }
 
-final class DataService: DataServiceProtocol {
+class DataService: DataServiceProtocol {
     var session: URLSession
     var urlBuilder: UrlBuilderProtocol
     
@@ -59,5 +59,21 @@ final class DataService: DataServiceProtocol {
                 return httpError
             }
             .eraseToAnyPublisher()
+    }
+}
+
+class CachedDataService: DataService {
+    let repository: ProjectRepository
+
+    init(session: URLSession, urlBuilder: UrlBuilderProtocol, repository: ProjectRepository) {
+        self.repository = repository
+        super.init(session: session, urlBuilder: urlBuilder)
+    }
+
+    override func getTrending(tag: String) -> AnyPublisher<[ProjectItem], HTTPError> {
+        return super.getTrending(tag: tag).map { items in
+            self.repository.save(projects: items)
+            return items
+        }.eraseToAnyPublisher()
     }
 }

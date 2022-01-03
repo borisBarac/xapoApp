@@ -11,7 +11,7 @@ enum HTTPError: LocalizedError {
     case statusCode(Int)
     case wrongUrl
     case serverDown
-    case unknown(Error)
+    case unknown(Error?)
 
     var errorDescription: String? {
         "Somethig went wrong"
@@ -42,7 +42,7 @@ enum HTTPError: LocalizedError {
         case .serverDown:
             return "No Internet connection"
         case .unknown(let error):
-            return error.localizedDescription
+            return error?.localizedDescription ?? ""
         }
     }
 }
