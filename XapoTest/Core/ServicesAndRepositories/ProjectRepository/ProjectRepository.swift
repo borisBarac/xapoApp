@@ -31,7 +31,7 @@ final class InMemoryProjectRepository: ProjectRepository {
     }
 
     func listAll() -> AnyCollection<ProjectItem> {
-        let sortedApps = allProjects.map { $0.value }.sorted { $0.forks < $1.forks }
+        let sortedApps = allProjects.map { $0.value }.sorted { $0 > $1 }
         return AnyCollection(sortedApps)
     }
 

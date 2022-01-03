@@ -7,15 +7,21 @@
 
 import Foundation
 
-extension Int64 {
-    var string: String {
-        return String(self)
-    }
-}
-
 /// Created from BE object, to avoid BE shema dependency
 /// In this simple case is the same object basically, but those 2 should be separate
 typealias ProjectItem = BERepoData.Item
+
+extension BERepoData.Item: Comparable {
+    static func < (lhs: BERepoData.Item, rhs: BERepoData.Item) -> Bool {
+        lhs.forks < rhs.forks
+    }
+
+    static func == (lhs: BERepoData.Item, rhs: BERepoData.Item) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    
+}
 
 /// BE JSON object representation, gonna get mapped to the obect used in the app
 struct BERepoData: Codable {

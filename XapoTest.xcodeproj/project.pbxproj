@@ -25,6 +25,11 @@
 		04B302DF27823407001077BA /* ApiMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 04B302DE27823407001077BA /* ApiMock.json */; };
 		04B302E2278250C8001077BA /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 04B302E1278250C8001077BA /* Mocker */; };
 		04B302E5278260C0001077BA /* ProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302E4278260C0001077BA /* ProjectRepository.swift */; };
+		04B302E827827070001077BA /* _ProjectRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302E727827070001077BA /* _ProjectRepositoryTests.swift */; };
+		04B302EA2782F3EA001077BA /* UIKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302E92782F3E9001077BA /* UIKitHelpers.swift */; };
+		04B302EC2782F4BE001077BA /* SwiftUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302EB2782F4BE001077BA /* SwiftUIHelpers.swift */; };
+		04B302EE2782F4FB001077BA /* _UIHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302ED2782F4FB001077BA /* _UIHelpersTests.swift */; };
+		04B302F027830141001077BA /* FoundationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302EF27830141001077BA /* FoundationHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +71,11 @@
 		04B302D927822D9A001077BA /* _DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DataServiceTests.swift; sourceTree = "<group>"; };
 		04B302DE27823407001077BA /* ApiMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ApiMock.json; sourceTree = "<group>"; };
 		04B302E4278260C0001077BA /* ProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepository.swift; sourceTree = "<group>"; };
+		04B302E727827070001077BA /* _ProjectRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ProjectRepositoryTests.swift; sourceTree = "<group>"; };
+		04B302E92782F3E9001077BA /* UIKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitHelpers.swift; sourceTree = "<group>"; };
+		04B302EB2782F4BE001077BA /* SwiftUIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHelpers.swift; sourceTree = "<group>"; };
+		04B302ED2782F4FB001077BA /* _UIHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UIHelpersTests.swift; sourceTree = "<group>"; };
+		04B302EF27830141001077BA /* FoundationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +198,7 @@
 			children = (
 				04B302E32782608D001077BA /* HttpError */,
 				04B302D127821D2A001077BA /* DataService */,
-				04B302E4278260C0001077BA /* ProjectRepository.swift */,
+				04B302E62782705E001077BA /* ProjectRepository */,
 			);
 			path = ServicesAndRepositories;
 			sourceTree = "<group>";
@@ -212,6 +222,9 @@
 		04B302D62782263F001077BA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				04B302F127830154001077BA /* UIKitHelpers */,
+				04B302EF27830141001077BA /* FoundationHelpers.swift */,
+				04B302EB2782F4BE001077BA /* SwiftUIHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -223,6 +236,24 @@
 				04B302CE278219FB001077BA /* _HttpErrorTests.swift */,
 			);
 			path = HttpError;
+			sourceTree = "<group>";
+		};
+		04B302E62782705E001077BA /* ProjectRepository */ = {
+			isa = PBXGroup;
+			children = (
+				04B302E4278260C0001077BA /* ProjectRepository.swift */,
+				04B302E727827070001077BA /* _ProjectRepositoryTests.swift */,
+			);
+			path = ProjectRepository;
+			sourceTree = "<group>";
+		};
+		04B302F127830154001077BA /* UIKitHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				04B302E92782F3E9001077BA /* UIKitHelpers.swift */,
+				04B302ED2782F4FB001077BA /* _UIHelpersTests.swift */,
+			);
+			path = UIKitHelpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,8 +396,11 @@
 				04B3029727820BC1001077BA /* ViewController.swift in Sources */,
 				04B3029327820BC1001077BA /* AppDelegate.swift in Sources */,
 				04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */,
+				04B302F027830141001077BA /* FoundationHelpers.swift in Sources */,
+				04B302EC2782F4BE001077BA /* SwiftUIHelpers.swift in Sources */,
 				04B302C9278213C6001077BA /* Model.swift in Sources */,
 				04B302CD2782163D001077BA /* HTTPError.swift in Sources */,
+				04B302EA2782F3EA001077BA /* UIKitHelpers.swift in Sources */,
 				04B302D327821EE9001077BA /* UrlBuilder.swift in Sources */,
 				04B302CB278214B9001077BA /* DataService.swift in Sources */,
 				04B302E5278260C0001077BA /* ProjectRepository.swift in Sources */,
@@ -380,7 +414,9 @@
 				04B302D827822C8B001077BA /* _UrlBuilderTests.swift in Sources */,
 				04B302CF278219FB001077BA /* _HttpErrorTests.swift in Sources */,
 				04B302AA27820BC2001077BA /* Helpers.swift in Sources */,
+				04B302EE2782F4FB001077BA /* _UIHelpersTests.swift in Sources */,
 				04B302DA27822D9A001077BA /* _DataServiceTests.swift in Sources */,
+				04B302E827827070001077BA /* _ProjectRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
