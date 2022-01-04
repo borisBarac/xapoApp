@@ -8,17 +8,21 @@
 import Foundation
 import Combine
 
-class GetAndSaveDataUseCase {
+class GetAndCashDataUseCase {
     let projectRepository: ProjectRepository
-    let dataService: CachedDataService
+    let dataService: DataServiceProtocol
 
-    init(projectRepository: ProjectRepository, dataService: CachedDataService) {
+    init(projectRepository: ProjectRepository, dataService: DataServiceProtocol) {
         self.projectRepository = projectRepository
         self.dataService = dataService
     }
 
     func with(tag: String) -> AnyPublisher<[ProjectItem], HTTPError> {
         self.dataService.getTrending(tag: tag)
+            .map { items in
+                self.projectRepository.save(projects: items)
+                return items
+            }.eraseToAnyPublisher()
     }
 }
 

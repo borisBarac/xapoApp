@@ -33,6 +33,7 @@
 		04B302F3278318B8001077BA /* MainUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302F2278318B8001077BA /* MainUseCase.swift */; };
 		04B302F7278327F5001077BA /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302F6278327F5001077BA /* MockDataService.swift */; };
 		04B302F9278331EB001077BA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302F8278331EB001077BA /* AppState.swift */; };
+		04D1268D2784CFC100860EFA /* _MainUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1268C2784CFC100860EFA /* _MainUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		04B302F2278318B8001077BA /* MainUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUseCase.swift; sourceTree = "<group>"; };
 		04B302F6278327F5001077BA /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 		04B302F8278331EB001077BA /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		04D1268C2784CFC100860EFA /* _MainUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _MainUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				04B302F2278318B8001077BA /* MainUseCase.swift */,
+				04D1268C2784CFC100860EFA /* _MainUseCaseTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 			files = (
 				04B302D827822C8B001077BA /* _UrlBuilderTests.swift in Sources */,
 				04B302CF278219FB001077BA /* _HttpErrorTests.swift in Sources */,
+				04D1268D2784CFC100860EFA /* _MainUseCaseTests.swift in Sources */,
 				04B302AA27820BC2001077BA /* Helpers.swift in Sources */,
 				04B302EE2782F4FB001077BA /* _UIHelpersTests.swift in Sources */,
 				04B302DA27822D9A001077BA /* _DataServiceTests.swift in Sources */,
