@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048E887A278613AC00270445 /* View+Conditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8879278613AC00270445 /* View+Conditional.swift */; };
 		04B3029327820BC1001077BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029227820BC1001077BA /* AppDelegate.swift */; };
 		04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029427820BC1001077BA /* SceneDelegate.swift */; };
 		04B3029727820BC1001077BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029627820BC1001077BA /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		048E8879278613AC00270445 /* View+Conditional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Conditional.swift"; sourceTree = "<group>"; };
 		04B3028F27820BC1001077BA /* XapoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XapoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B3029227820BC1001077BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B3029427820BC1001077BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				04B3029627820BC1001077BA /* ViewController.swift */,
 				04D126952784FEEC00860EFA /* Transitions.swift */,
+				048E8879278613AC00270445 /* View+Conditional.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			files = (
 				04B3029727820BC1001077BA /* ViewController.swift in Sources */,
 				04B3029327820BC1001077BA /* AppDelegate.swift in Sources */,
+				048E887A278613AC00270445 /* View+Conditional.swift in Sources */,
 				04B302F3278318B8001077BA /* MainUseCase.swift in Sources */,
 				04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */,
 				04D126962784FEEC00860EFA /* Transitions.swift in Sources */,
