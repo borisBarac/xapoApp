@@ -34,6 +34,7 @@
 		04B302F7278327F5001077BA /* MockDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302F6278327F5001077BA /* MockDataService.swift */; };
 		04B302F9278331EB001077BA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302F8278331EB001077BA /* AppState.swift */; };
 		04D1268D2784CFC100860EFA /* _MainUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D1268C2784CFC100860EFA /* _MainUseCaseTests.swift */; };
+		04D126962784FEEC00860EFA /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D126952784FEEC00860EFA /* Transitions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		04B302F6278327F5001077BA /* MockDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataService.swift; sourceTree = "<group>"; };
 		04B302F8278331EB001077BA /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		04D1268C2784CFC100860EFA /* _MainUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _MainUseCaseTests.swift; sourceTree = "<group>"; };
+		04D126952784FEEC00860EFA /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				04B3029627820BC1001077BA /* ViewController.swift */,
+				04D126952784FEEC00860EFA /* Transitions.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				04B3029327820BC1001077BA /* AppDelegate.swift in Sources */,
 				04B302F3278318B8001077BA /* MainUseCase.swift in Sources */,
 				04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */,
+				04D126962784FEEC00860EFA /* Transitions.swift in Sources */,
 				04B302F027830141001077BA /* FoundationHelpers.swift in Sources */,
 				04B302EC2782F4BE001077BA /* SwiftUIHelpers.swift in Sources */,
 				04B302C9278213C6001077BA /* Model.swift in Sources */,
