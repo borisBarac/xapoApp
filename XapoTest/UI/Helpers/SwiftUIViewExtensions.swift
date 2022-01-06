@@ -51,14 +51,21 @@ extension View {
     }
 
     func previewInIphone12() -> some View {
-        modifier(PreviewInIphone12())
+        modifier(PreviewIn(device: "iPhone 12"))
+    }
+
+    func previewInIpadPro11inch() -> some View {
+        modifier(PreviewIn(device: "iPad Pro (9.7-inch)"))
     }
 }
 
-struct PreviewInIphone12: ViewModifier {
+struct PreviewIn: ViewModifier {
+
+    let device: String
+
     func body(content: Content) -> some View {
         content
-            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-            .previewDisplayName("iPhone 12")
+            .previewDevice(PreviewDevice(rawValue: device))
+            .previewDisplayName(device)
     }
 }

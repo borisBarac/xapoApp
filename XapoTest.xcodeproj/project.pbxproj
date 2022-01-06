@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		044517E52787927D00F86D18 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517E42787927D00F86D18 /* HostingController.swift */; };
+		044517E72787931100F86D18 /* TrendingViewIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517E62787931100F86D18 /* TrendingViewIPad.swift */; };
+		044517EA2787AB2B00F86D18 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517E92787AB2B00F86D18 /* Shared.swift */; };
 		048E887A278613AC00270445 /* SwiftUIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */; };
 		048E887F2786209E00270445 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E887E2786209E00270445 /* WebView.swift */; };
 		048E8881278632CC00270445 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8880278632CC00270445 /* Colors.swift */; };
@@ -16,7 +18,7 @@
 		048E8888278662F700270445 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8887278662F700270445 /* TestingView.swift */; };
 		04B3029327820BC1001077BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029227820BC1001077BA /* AppDelegate.swift */; };
 		04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029427820BC1001077BA /* SceneDelegate.swift */; };
-		04B3029727820BC1001077BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029627820BC1001077BA /* ContentView.swift */; };
+		04B3029727820BC1001077BA /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029627820BC1001077BA /* TrendingView.swift */; };
 		04B3029C27820BC2001077BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B3029B27820BC2001077BA /* Assets.xcassets */; };
 		04B3029F27820BC2001077BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B3029D27820BC2001077BA /* LaunchScreen.storyboard */; };
 		04B302AA27820BC2001077BA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302A927820BC2001077BA /* Helpers.swift */; };
@@ -63,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		044517E42787927D00F86D18 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		044517E62787931100F86D18 /* TrendingViewIPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewIPad.swift; sourceTree = "<group>"; };
+		044517E92787AB2B00F86D18 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewExtensions.swift; sourceTree = "<group>"; };
 		048E887E2786209E00270445 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		048E8880278632CC00270445 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		04B3028F27820BC1001077BA /* XapoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XapoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B3029227820BC1001077BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B3029427820BC1001077BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04B3029627820BC1001077BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04B3029627820BC1001077BA /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 		04B3029B27820BC2001077BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B3029E27820BC2001077BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B302A027820BC2001077BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		044517E827879E9100F86D18 /* TrendingView */ = {
+			isa = PBXGroup;
+			children = (
+				04B3029627820BC1001077BA /* TrendingView.swift */,
+				044517E62787931100F86D18 /* TrendingViewIPad.swift */,
+			);
+			path = TrendingView;
+			sourceTree = "<group>";
+		};
 		04B3028627820BC1001077BA = {
 			isa = PBXGroup;
 			children = (
@@ -163,10 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				04B302C2278211AA001077BA /* Resources */,
-				04B302C4278212FF001077BA /* UI */,
-				04B302C3278212F2001077BA /* Core */,
 				04B3029227820BC1001077BA /* AppDelegate.swift */,
 				04B3029427820BC1001077BA /* SceneDelegate.swift */,
+				04B302C4278212FF001077BA /* UI */,
+				04B302C3278212F2001077BA /* Core */,
 			);
 			path = XapoTest;
 			sourceTree = "<group>";
@@ -215,7 +228,8 @@
 			isa = PBXGroup;
 			children = (
 				044517E32787782B00F86D18 /* Helpers */,
-				04B3029627820BC1001077BA /* ContentView.swift */,
+				044517E827879E9100F86D18 /* TrendingView */,
+				044517E92787AB2B00F86D18 /* Shared.swift */,
 				048E887E2786209E00270445 /* WebView.swift */,
 				04D126952784FEEC00860EFA /* Transitions.swift */,
 				044517E42787927D00F86D18 /* HostingController.swift */,
@@ -446,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B3029727820BC1001077BA /* ContentView.swift in Sources */,
+				04B3029727820BC1001077BA /* TrendingView.swift in Sources */,
 				048E887F2786209E00270445 /* WebView.swift in Sources */,
 				04B3029327820BC1001077BA /* AppDelegate.swift in Sources */,
 				048E8888278662F700270445 /* TestingView.swift in Sources */,
@@ -466,6 +480,8 @@
 				04B302F9278331EB001077BA /* AppState.swift in Sources */,
 				04B302CB278214B9001077BA /* DataService.swift in Sources */,
 				04B302E5278260C0001077BA /* ProjectRepository.swift in Sources */,
+				044517EA2787AB2B00F86D18 /* Shared.swift in Sources */,
+				044517E72787931100F86D18 /* TrendingViewIPad.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
