@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,23 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
+        let hostingVC = UIHostingController(rootView: ContentView())
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
+        window?.rootViewController = hostingVC
         window?.makeKeyAndVisible()
-
-
-//        DataService(session: URLSession.shared, urlBuilder: UrlBuilder()).getTrending(tag: "iOS")
-//            .sink { completion in
-//            switch completion {
-//            case .finished:
-//                print("🏁 finished")
-//            case .failure(let error):
-//                print("❗️ failure: \(error)")
-//            }
-//        } receiveValue: { data in
-//            print(22)
-//        }.store(in: &can)
 
     }
 

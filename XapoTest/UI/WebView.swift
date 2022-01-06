@@ -31,6 +31,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         webView.navigationDelegate = self
+        webView.scrollView.bounces = false
 
         [webView, activityIndicator].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false

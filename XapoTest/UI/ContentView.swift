@@ -18,6 +18,11 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+            Color
+                .xapobackgroundWithOpacity
+                .edgesIgnoringSafeArea(.all)
+                .zIndex(0)
+
             if showingDetails == false {
                 ProjectList()
                     .onTapGesture {
@@ -39,17 +44,21 @@ struct ContentView: View {
                     .zIndex(2)
                     .transition(.stripes(number: 11))
             }
-        }.edgesIgnoringSafeArea(.all)
+        }
     }
 
 }
 
 struct ProjectList: View {
     var body: some View {
-        List(0..<5) { item in
-            ProjectListItem()
-                .listRowBackground(Color.xapobackground)
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        ZStack {
+            List(0..<5) { item in
+                ProjectListItem()
+                    .listRowBackground(Color.xapobackgroundWithOpacity)
+            }
+        }.onAppear {
+            UITableView.appearance().backgroundColor = .clear
+        }
     }
 }
 
@@ -76,25 +85,34 @@ struct ProjectListItem: View {
 
 struct DetailView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            ProjectListItem()
-                .background(Color.xapobackgroundWithOpacity)
-                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        ZStack {
+            VStack(alignment: .leading, spacing: 8) {
+                ProjectListItem()
+                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
 
-            WebView(url: URL(string: "https://github.com/gonzalezreal/MarkdownUI/blob/main/README.md")!)
-                .conditionallyShow(isNotRunningIsPreviewMode)
-            Color(.red)
-                .conditionallyShow(isRunningIsPreviewMode)
+                WebView(url: URL(string: "https://github.com/gonzalezreal/MarkdownUI/blob/main/README.md")!)
+                    .conditionallyShow(isNotRunningIsPreviewMode)
+                Color(.red)
+                    .conditionallyShow(isRunningIsPreviewMode)
+            }
         }
     }
 }
 
+// MARK: - Previews
 
 #if DEBUG
 
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewInIphone12()
+    }
+}
+
+struct DetailView_Previews : PreviewProvider {
+    static var previews: some View {
+        ContentView(showingDetails: true)
             .previewInIphone12()
     }
 }
@@ -106,13 +124,6 @@ struct ProjectList_Previews : PreviewProvider {
 
         ProjectListItem()
             .background(Color.black)
-            .previewInIphone12()
-    }
-}
-
-struct ReadMeView_Previews : PreviewProvider {
-    static var previews: some View {
-        DetailView()
             .previewInIphone12()
     }
 }
