@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
-        let hostingVC = UIHostingController(rootView: ContentView())
+        let hostingVC = HostingController(rootView: ContentView())
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
