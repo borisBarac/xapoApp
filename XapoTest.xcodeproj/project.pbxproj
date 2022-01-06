@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		048E887A278613AC00270445 /* SwiftUIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */; };
 		048E887F2786209E00270445 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E887E2786209E00270445 /* WebView.swift */; };
+		048E8881278632CC00270445 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8880278632CC00270445 /* Colors.swift */; };
+		048E8884278655DD00270445 /* SwURL in Frameworks */ = {isa = PBXBuildFile; productRef = 048E8883278655DD00270445 /* SwURL */; };
+		048E8886278659F500270445 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8885278659F500270445 /* SpinnerView.swift */; };
+		048E8888278662F700270445 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8887278662F700270445 /* TestingView.swift */; };
 		04B3029327820BC1001077BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029227820BC1001077BA /* AppDelegate.swift */; };
 		04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029427820BC1001077BA /* SceneDelegate.swift */; };
-		04B3029727820BC1001077BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029627820BC1001077BA /* ViewController.swift */; };
+		04B3029727820BC1001077BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3029627820BC1001077BA /* ContentView.swift */; };
 		04B3029C27820BC2001077BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B3029B27820BC2001077BA /* Assets.xcassets */; };
 		04B3029F27820BC2001077BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04B3029D27820BC2001077BA /* LaunchScreen.storyboard */; };
 		04B302AA27820BC2001077BA /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B302A927820BC2001077BA /* Helpers.swift */; };
@@ -59,10 +63,13 @@
 /* Begin PBXFileReference section */
 		048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewExtensions.swift; sourceTree = "<group>"; };
 		048E887E2786209E00270445 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		048E8880278632CC00270445 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		048E8885278659F500270445 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		048E8887278662F700270445 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
 		04B3028F27820BC1001077BA /* XapoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XapoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B3029227820BC1001077BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04B3029427820BC1001077BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04B3029627820BC1001077BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04B3029627820BC1001077BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04B3029B27820BC2001077BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B3029E27820BC2001077BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04B302A027820BC2001077BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048E8884278655DD00270445 /* SwURL in Frameworks */,
 				04B302E2278250C8001077BA /* Mocker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,10 +201,13 @@
 		04B302C4278212FF001077BA /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				04B3029627820BC1001077BA /* ViewController.swift */,
+				04B3029627820BC1001077BA /* ContentView.swift */,
 				048E887E2786209E00270445 /* WebView.swift */,
 				04D126952784FEEC00860EFA /* Transitions.swift */,
 				048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */,
+				048E8880278632CC00270445 /* Colors.swift */,
+				048E8885278659F500270445 /* SpinnerView.swift */,
+				048E8887278662F700270445 /* TestingView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -303,6 +314,7 @@
 			name = XapoTest;
 			packageProductDependencies = (
 				04B302E1278250C8001077BA /* Mocker */,
+				048E8883278655DD00270445 /* SwURL */,
 			);
 			productName = XapoTest;
 			productReference = 04B3028F27820BC1001077BA /* XapoTest.app */;
@@ -378,6 +390,7 @@
 			mainGroup = 04B3028627820BC1001077BA;
 			packageReferences = (
 				04B302E0278250C8001077BA /* XCRemoteSwiftPackageReference "Mocker" */,
+				048E8882278655DD00270445 /* XCRemoteSwiftPackageReference "SwURL" */,
 			);
 			productRefGroup = 04B3029027820BC1001077BA /* Products */;
 			projectDirPath = "";
@@ -422,15 +435,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B3029727820BC1001077BA /* ViewController.swift in Sources */,
+				04B3029727820BC1001077BA /* ContentView.swift in Sources */,
 				048E887F2786209E00270445 /* WebView.swift in Sources */,
 				04B3029327820BC1001077BA /* AppDelegate.swift in Sources */,
+				048E8888278662F700270445 /* TestingView.swift in Sources */,
+				048E8881278632CC00270445 /* Colors.swift in Sources */,
 				048E887A278613AC00270445 /* SwiftUIViewExtensions.swift in Sources */,
 				04B302F3278318B8001077BA /* MainUseCase.swift in Sources */,
 				04B3029527820BC1001077BA /* SceneDelegate.swift in Sources */,
 				04D126962784FEEC00860EFA /* Transitions.swift in Sources */,
 				04B302F027830141001077BA /* FoundationHelpers.swift in Sources */,
 				04B302EC2782F4BE001077BA /* SwiftUIHelpers.swift in Sources */,
+				048E8886278659F500270445 /* SpinnerView.swift in Sources */,
 				04B302C9278213C6001077BA /* Model.swift in Sources */,
 				04B302CD2782163D001077BA /* HTTPError.swift in Sources */,
 				04B302EA2782F3EA001077BA /* UIKitHelpers.swift in Sources */,
@@ -782,6 +798,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		048E8882278655DD00270445 /* XCRemoteSwiftPackageReference "SwURL" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cmtrounce/SwURL";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 		04B302E0278250C8001077BA /* XCRemoteSwiftPackageReference "Mocker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WeTransfer/Mocker";
@@ -793,6 +817,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		048E8883278655DD00270445 /* SwURL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 048E8882278655DD00270445 /* XCRemoteSwiftPackageReference "SwURL" */;
+			productName = SwURL;
+		};
 		04B302E1278250C8001077BA /* Mocker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04B302E0278250C8001077BA /* XCRemoteSwiftPackageReference "Mocker" */;
