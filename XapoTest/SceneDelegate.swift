@@ -23,8 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
-        let hostingVC = UIDevice.isIphone() ? HostingController(rootView:TrendingView())
-                                            : HostingController(rootView:TrendingViewIPad())
+        let hostingVC = HostingController(rootView:TrendingContainerView())
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene

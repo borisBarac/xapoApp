@@ -9,6 +9,10 @@ import SwiftUI
 import UIKit
 
 struct TrendingViewIPad: View {
+
+    // no need fo @state or something, view is gonna get recreated on changes anyway
+    var items: [ProjectItem]
+
     var body: some View {
         NavigationView {
             MasterViewIpad()
@@ -48,7 +52,7 @@ struct DetailViewIpad: View {
 @available(iOS 15.0, *)
 struct TrendingViewIPad_Previews : PreviewProvider {
     static var previews: some View {
-        TrendingViewIPad()
+        TrendingViewIPad(items: previewList)
             .previewInIpadPro11inch()
             .previewInterfaceOrientation(.landscapeRight)
     }

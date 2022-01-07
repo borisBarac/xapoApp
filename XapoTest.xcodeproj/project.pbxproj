@@ -10,6 +10,11 @@
 		044517E52787927D00F86D18 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517E42787927D00F86D18 /* HostingController.swift */; };
 		044517E72787931100F86D18 /* TrendingViewIPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517E62787931100F86D18 /* TrendingViewIPad.swift */; };
 		044517EA2787AB2B00F86D18 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517E92787AB2B00F86D18 /* Shared.swift */; };
+		044517ED27889C3000F86D18 /* TrendingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517EC27889C3000F86D18 /* TrendingContainer.swift */; };
+		044517EF27889C8100F86D18 /* AsyncContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517EE27889C8100F86D18 /* AsyncContentView.swift */; };
+		044517F127889E2400F86D18 /* _TrendingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517F027889E2400F86D18 /* _TrendingViewModelTests.swift */; };
+		044517F32789C75500F86D18 /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517F22789C75500F86D18 /* TrendingViewModel.swift */; };
+		044517F52789E25D00F86D18 /* PriviewMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517F42789E25D00F86D18 /* PriviewMocks.swift */; };
 		048E887A278613AC00270445 /* SwiftUIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */; };
 		048E887F2786209E00270445 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E887E2786209E00270445 /* WebView.swift */; };
 		048E8881278632CC00270445 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8880278632CC00270445 /* Colors.swift */; };
@@ -67,6 +72,11 @@
 		044517E42787927D00F86D18 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
 		044517E62787931100F86D18 /* TrendingViewIPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewIPad.swift; sourceTree = "<group>"; };
 		044517E92787AB2B00F86D18 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		044517EC27889C3000F86D18 /* TrendingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingContainer.swift; sourceTree = "<group>"; };
+		044517EE27889C8100F86D18 /* AsyncContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncContentView.swift; sourceTree = "<group>"; };
+		044517F027889E2400F86D18 /* _TrendingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TrendingViewModelTests.swift; sourceTree = "<group>"; };
+		044517F22789C75500F86D18 /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
+		044517F42789E25D00F86D18 /* PriviewMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriviewMocks.swift; sourceTree = "<group>"; };
 		048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewExtensions.swift; sourceTree = "<group>"; };
 		048E887E2786209E00270445 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		048E8880278632CC00270445 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -139,6 +149,7 @@
 				048E8880278632CC00270445 /* Colors.swift */,
 				048E8885278659F500270445 /* SpinnerView.swift */,
 				048E8887278662F700270445 /* TestingView.swift */,
+				044517F42789E25D00F86D18 /* PriviewMocks.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -146,8 +157,12 @@
 		044517E827879E9100F86D18 /* TrendingView */ = {
 			isa = PBXGroup;
 			children = (
+				044517E92787AB2B00F86D18 /* Shared.swift */,
 				04B3029627820BC1001077BA /* TrendingView.swift */,
 				044517E62787931100F86D18 /* TrendingViewIPad.swift */,
+				044517EC27889C3000F86D18 /* TrendingContainer.swift */,
+				044517F22789C75500F86D18 /* TrendingViewModel.swift */,
+				044517F027889E2400F86D18 /* _TrendingViewModelTests.swift */,
 			);
 			path = TrendingView;
 			sourceTree = "<group>";
@@ -229,7 +244,7 @@
 			children = (
 				044517E32787782B00F86D18 /* Helpers */,
 				044517E827879E9100F86D18 /* TrendingView */,
-				044517E92787AB2B00F86D18 /* Shared.swift */,
+				044517EE27889C8100F86D18 /* AsyncContentView.swift */,
 				048E887E2786209E00270445 /* WebView.swift */,
 				04D126952784FEEC00860EFA /* Transitions.swift */,
 				044517E42787927D00F86D18 /* HostingController.swift */,
@@ -472,7 +487,10 @@
 				04B302F027830141001077BA /* FoundationHelpers.swift in Sources */,
 				044517E52787927D00F86D18 /* HostingController.swift in Sources */,
 				04B302EC2782F4BE001077BA /* SwiftUIHelpers.swift in Sources */,
+				044517F32789C75500F86D18 /* TrendingViewModel.swift in Sources */,
 				048E8886278659F500270445 /* SpinnerView.swift in Sources */,
+				044517F52789E25D00F86D18 /* PriviewMocks.swift in Sources */,
+				044517EF27889C8100F86D18 /* AsyncContentView.swift in Sources */,
 				04B302C9278213C6001077BA /* Model.swift in Sources */,
 				04B302CD2782163D001077BA /* HTTPError.swift in Sources */,
 				04B302EA2782F3EA001077BA /* UIKitHelpers.swift in Sources */,
@@ -480,6 +498,7 @@
 				04B302F9278331EB001077BA /* AppState.swift in Sources */,
 				04B302CB278214B9001077BA /* DataService.swift in Sources */,
 				04B302E5278260C0001077BA /* ProjectRepository.swift in Sources */,
+				044517ED27889C3000F86D18 /* TrendingContainer.swift in Sources */,
 				044517EA2787AB2B00F86D18 /* Shared.swift in Sources */,
 				044517E72787931100F86D18 /* TrendingViewIPad.swift in Sources */,
 			);
@@ -494,6 +513,7 @@
 				04D1268D2784CFC100860EFA /* _MainUseCaseTests.swift in Sources */,
 				04B302AA27820BC2001077BA /* Helpers.swift in Sources */,
 				04B302EE2782F4FB001077BA /* _UIHelpersTests.swift in Sources */,
+				044517F127889E2400F86D18 /* _TrendingViewModelTests.swift in Sources */,
 				04B302DA27822D9A001077BA /* _DataServiceTests.swift in Sources */,
 				04B302F7278327F5001077BA /* MockDataService.swift in Sources */,
 				04B302E827827070001077BA /* _ProjectRepositoryTests.swift in Sources */,

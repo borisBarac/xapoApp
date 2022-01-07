@@ -104,7 +104,7 @@ struct ProjectList_Previews : PreviewProvider {
 
 struct DetailView_Previews : PreviewProvider {
     static var previews: some View {
-        TrendingView(showingDetails: true)
+        TrendingView(items: previewList, showingDetails: true)
             .previewInIphone12()
     }
 }

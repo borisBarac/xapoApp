@@ -31,3 +31,20 @@ class MockDataService: DataServiceProtocol {
         }.eraseToAnyPublisher()
     }
 }
+
+class MockDataServiceWithError: DataServiceProtocol {
+    var session: URLSession = URLSession.shared
+    var urlBuilder: UrlBuilderProtocol = UrlBuilder()
+
+    let error: HTTPError
+
+    init(error: HTTPError) {
+        self.error = error
+    }
+
+    func getTrending(tag: String) -> AnyPublisher<[ProjectItem], HTTPError> {
+        return Future { promise in
+            promise(.failure(self.error))
+        }.eraseToAnyPublisher()
+    }
+}

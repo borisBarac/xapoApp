@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Color {
     static let xapobackground = Color(red: 34/255, green: 42/255, blue: 56/255)
-    static let xapobackgroundWithOpacity = Color(red: 34/255, green: 42/255, blue: 56/255).opacity(0.8)
+    static let xapobackgroundWithOpacity = Color.xapobackground.opacity(0.8)
 
     func uiColor() -> UIColor {
 

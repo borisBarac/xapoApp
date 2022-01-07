@@ -46,3 +46,43 @@ enum HTTPError: LocalizedError {
         }
     }
 }
+
+extension HTTPError: Equatable {
+    static func == (lhs: HTTPError, rhs: HTTPError) -> Bool {
+        switch lhs {
+        case .statusCode(let Lint):
+            switch rhs {
+            case .statusCode(let Rint):
+                return Lint == Rint
+            default:
+                return false
+            }
+
+        case .wrongUrl:
+            switch rhs {
+            case .wrongUrl:
+                return true
+            default:
+                return false
+            }
+
+        case .serverDown:
+            switch rhs {
+            case .serverDown:
+                return true
+            default:
+                return false
+            }
+
+        case .unknown(let Loptional):
+            switch rhs {
+            case .unknown(let Roptional):
+                return Loptional?.localizedDescription == Roptional?.localizedDescription
+            default:
+                return false
+            }
+        }
+    }
+
+
+}

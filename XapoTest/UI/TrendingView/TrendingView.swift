@@ -10,6 +10,8 @@ import UIKit
 
 struct TrendingView: View {
 
+    // no need fo @state or something, view is gonna get recreated on changes anyway
+    var items: [ProjectItem]
     @State var showingDetails: Bool = false
 
     private var animation: Animation {
@@ -55,7 +57,7 @@ struct TrendingView: View {
 
 struct TrendingView_Previews : PreviewProvider {
     static var previews: some View {
-        TrendingView()
+        TrendingView(items: previewList)
             .previewInIphone12()
     }
 }

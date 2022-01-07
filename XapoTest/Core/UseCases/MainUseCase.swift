@@ -24,6 +24,24 @@ class GetAndCashDataUseCase {
                 return items
             }.eraseToAnyPublisher()
     }
+
+    #if DEBUG
+    /// used for mocking in the swiftUI preview
+    func previewList() -> AnyPublisher<[ProjectItem], HTTPError>  {
+        var items = [ProjectItem]()
+        for id in 0..<100 {
+            items.append(ProjectItem(id: Int64(id),
+                                     full_name: "TEST TEST",
+                                     description: "TEST DESCRIPTION",
+                                     owner: BERepoData.Owner(id: id, login: "OWNER TEST", avatar_url: ""),
+                                     url: "",
+                                     homepage: nil,
+                                     forks: id))
+        }
+
+        return Future { promise in
+            promise(.success(items))
+        }.eraseToAnyPublisher()
+    }
+    #endif
 }
-
-
