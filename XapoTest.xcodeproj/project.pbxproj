@@ -15,6 +15,7 @@
 		044517F127889E2400F86D18 /* _TrendingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517F027889E2400F86D18 /* _TrendingViewModelTests.swift */; };
 		044517F32789C75500F86D18 /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517F22789C75500F86D18 /* TrendingViewModel.swift */; };
 		044517F52789E25D00F86D18 /* PriviewMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517F42789E25D00F86D18 /* PriviewMocks.swift */; };
+		044517F7278A128E00F86D18 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044517F6278A128E00F86D18 /* UIKitExtensions.swift */; };
 		048E887A278613AC00270445 /* SwiftUIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */; };
 		048E887F2786209E00270445 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E887E2786209E00270445 /* WebView.swift */; };
 		048E8881278632CC00270445 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E8880278632CC00270445 /* Colors.swift */; };
@@ -77,6 +78,7 @@
 		044517F027889E2400F86D18 /* _TrendingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TrendingViewModelTests.swift; sourceTree = "<group>"; };
 		044517F22789C75500F86D18 /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
 		044517F42789E25D00F86D18 /* PriviewMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriviewMocks.swift; sourceTree = "<group>"; };
+		044517F6278A128E00F86D18 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewExtensions.swift; sourceTree = "<group>"; };
 		048E887E2786209E00270445 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		048E8880278632CC00270445 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		044517E32787782B00F86D18 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				044517F6278A128E00F86D18 /* UIKitExtensions.swift */,
 				048E8879278613AC00270445 /* SwiftUIViewExtensions.swift */,
 				048E8880278632CC00270445 /* Colors.swift */,
 				048E8885278659F500270445 /* SpinnerView.swift */,
@@ -495,6 +498,7 @@
 				04B302CD2782163D001077BA /* HTTPError.swift in Sources */,
 				04B302EA2782F3EA001077BA /* UIKitHelpers.swift in Sources */,
 				04B302D327821EE9001077BA /* UrlBuilder.swift in Sources */,
+				044517F7278A128E00F86D18 /* UIKitExtensions.swift in Sources */,
 				04B302F9278331EB001077BA /* AppState.swift in Sources */,
 				04B302CB278214B9001077BA /* DataService.swift in Sources */,
 				04B302E5278260C0001077BA /* ProjectRepository.swift in Sources */,

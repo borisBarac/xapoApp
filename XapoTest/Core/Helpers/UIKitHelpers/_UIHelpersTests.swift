@@ -17,10 +17,10 @@ class _UIHelpersTests: XCTestCase {
         window.makeKeyAndVisible()
 
         let exp = XCTestExpectation(description: "Root changed")
-        window.switch(rootViewController: VC2(), animated: true) {
+        window.replaceRoot(viewController: VC2(), animated: true) {
             exp.fulfill()
         }
-
+        
         wait(for: [exp], timeout: 1)
         XCTAssertTrue(window.rootViewController is VC2)
     }

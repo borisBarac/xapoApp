@@ -22,6 +22,7 @@ class MockDataService: DataServiceProtocol {
                                      description: "TEST DESCRIPTION",
                                      owner: BERepoData.Owner(id: id, login: "OWNER TEST", avatar_url: ""),
                                      url: "",
+                                     html_url: "",
                                      homepage: nil,
                                      forks: id))
         }
