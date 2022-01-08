@@ -8,11 +8,19 @@
 import SwiftUI
 import UIKit
 
-struct TrendingView: View {
+protocol TrendingViewProtocol: View {
 
     // no need fo @state or something, view is gonna get recreated on changes anyway
+    var items: [ProjectItem] { get set }
+    var detailViewitem: ProjectItem? { get set }
+}
+
+struct TrendingView: TrendingViewProtocol {
     var items: [ProjectItem]
-    @State var showingDetails: Bool = false
+    @State
+    var detailViewitem: ProjectItem?
+    @State
+    var showingDetails: Bool = false
 
     private var animation: Animation {
         .easeIn(duration: 0.3)
@@ -26,15 +34,16 @@ struct TrendingView: View {
                 .zIndex(0)
 
             if showingDetails == false {
-                ProjectList()
-                    .onTapGesture {
-                        withAnimation(animation) {
-                            showingDetails.toggle()
-                        }
+                ProjectList(items: items,
+                            cellTap: { item in
+                    detailViewitem = item
+                    withAnimation(animation) {
+                        showingDetails.toggle()
                     }
+                })
                     .zIndex(1)
             } else {
-                DetailView()
+                DetailView(item: detailViewitem ?? items.first)
                     .gesture(
                         DragGesture()
                             .onEnded { _ in

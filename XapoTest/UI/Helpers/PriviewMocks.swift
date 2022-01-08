@@ -16,12 +16,12 @@ var previewList: [ProjectItem]  {
                                  full_name: "TEST TEST",
                                  description: "TEST DESCRIPTION",
                                  owner: BERepoData.Owner(id: id, login: "OWNER TEST", avatar_url: ""),
-                                 url: "",
+                                 url: "https://github.com/apple/swift",
+                                 html_url: "https://github.com/apple/swift",
                                  homepage: nil,
                                  forks: id))
     }
 
     return items
 }
-
 #endif

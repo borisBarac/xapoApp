@@ -30,12 +30,15 @@ struct BERepoData: Codable {
 }
 
 extension BERepoData {
-    struct Item: Codable {
-        let id: Int64
+    struct Item: Codable, Identifiable {
+        typealias ID = Int64
+
+        let id: ID
         let full_name: String
         let description: String
         let owner: Owner
         let url: String
+        let html_url: String
         let homepage: String?
         let forks: Int
     }

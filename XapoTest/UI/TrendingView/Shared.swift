@@ -8,25 +8,36 @@
 import SwiftUI
 
 struct ProjectList: View {
+
+    var items: [ProjectItem]
+    var cellTap: ((ProjectItem) -> ())?
+
     @ViewBuilder
     private var list: some View {
         if UIDevice.isIphone() {
             List {
                 Section(header: ListHeader()) {
-                    ForEach(0..<99) { _ in
-                        ProjectListItem()
-                            .listRowBackground(Color.xapobackgroundWithOpacity)
+                    ForEach(items) { item in
+                        makeProjectListItem(item)
                     }
                 }
             }
             .listStyle(.automatic)
         } else if UIDevice.isIpad() {
-            List(0..<99) { item in
-                ProjectListItem()
-                    .listRowBackground(Color.xapobackgroundWithOpacity)
+            List(items) { item in
+                makeProjectListItem(item)
             }
             .listStyle(.automatic)
         }
+    }
+
+    @ViewBuilder
+    private func makeProjectListItem(_ item: ProjectItem) -> some View {
+        ProjectListItem(item: item)
+            .onTapGesture {
+                cellTap?(item)
+            }
+            .listRowBackground(Color.xapobackgroundWithOpacity)
     }
 
     var body: some View {
@@ -36,6 +47,7 @@ struct ProjectList: View {
             UITableView.appearance().backgroundColor = .clear
         }
     }
+
 }
 
 extension ProjectList {
@@ -51,19 +63,22 @@ extension ProjectList {
 }
 
 struct ProjectListItem: View {
+
+    var item: ProjectItem
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center, spacing: 5) {
                 Image(systemName: "photo")
                     .frame(width: 60, height: 60)
                 VStack(alignment: .leading) {
-                    Text("Simon Ng")
-                    Text("Founder of AppCoda")
+                    Text(item.full_name)
+                    Text(item.owner.login)
                         .font(.subheadline)
                 }
                 Spacer()
             }
-            Text("This is the main Description that is gonna go here")
+            Text(item.description)
                 .font(.footnote)
                 .lineLimit(2)
                 .truncationMode(.tail)
@@ -72,16 +87,26 @@ struct ProjectListItem: View {
 }
 
 struct DetailView: View {
-    var body: some View {
-        ZStack {
-            VStack(alignment: .leading, spacing: 8) {
-                ProjectListItem()
-                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+    
+    var item: ProjectItem?
 
-                WebView(url: URL(string: "https://github.com/gonzalezreal/MarkdownUI/blob/main/README.md")!)
-                    .conditionallyShow(isNotRunningIsPreviewMode)
-                Color(.red)
-                    .conditionallyShow(isRunningIsPreviewMode)
+    var body: some View {
+        if let item = item, let webViewUrl = URL(string: item.html_url) {
+            ZStack {
+                VStack(alignment: .leading, spacing: 8) {
+                    ProjectListItem(item: item)
+                        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+                    WebView(url: webViewUrl)
+                        .conditionallyShow(isNotRunningIsPreviewMode)
+                    Color(.red)
+                        .conditionallyShow(isRunningIsPreviewMode)
+                }
+            }
+        } else {
+            ZStack {
+                Color.xapobackgroundWithOpacity
+                    .edgesIgnoringSafeArea(.all)
+                Text("NO DATA 🤨")
             }
         }
     }
@@ -94,10 +119,10 @@ struct DetailView: View {
 
 struct ProjectList_Previews : PreviewProvider {
     static var previews: some View {
-        ProjectList()
+        ProjectList(items: previewList)
             .previewInIphone12()
 
-        ProjectList()
+        ProjectList(items: previewList)
             .previewInIpadPro11inch()
     }
 }
