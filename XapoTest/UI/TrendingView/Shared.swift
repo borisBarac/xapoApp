@@ -87,7 +87,7 @@ struct ProjectListItem: View {
 }
 
 struct DetailView: View {
-    
+    @Binding
     var item: ProjectItem?
 
     var body: some View {
@@ -129,7 +129,7 @@ struct ProjectList_Previews : PreviewProvider {
 
 struct DetailView_Previews : PreviewProvider {
     static var previews: some View {
-        TrendingView(items: previewList, showingDetails: true)
+        TrendingView(model: TrendingModel(items: previewList), showingDetails: true)
             .previewInIphone12()
     }
 }

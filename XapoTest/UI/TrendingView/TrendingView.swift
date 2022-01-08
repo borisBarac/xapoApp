@@ -8,17 +8,21 @@
 import SwiftUI
 import UIKit
 
-protocol TrendingViewProtocol: View {
+struct TrendingModel {
+    var items: [ProjectItem] {
+        didSet {
+            detailViewitem = items.first
+        }
+    }
 
-    // no need fo @state or something, view is gonna get recreated on changes anyway
-    var items: [ProjectItem] { get set }
-    var detailViewitem: ProjectItem? { get set }
+    var detailViewitem: ProjectItem?
 }
 
-struct TrendingView: TrendingViewProtocol {
-    var items: [ProjectItem]
+struct TrendingView: View {
+
     @State
-    var detailViewitem: ProjectItem?
+    var model: TrendingModel
+
     @State
     var showingDetails: Bool = false
 
@@ -34,16 +38,16 @@ struct TrendingView: TrendingViewProtocol {
                 .zIndex(0)
 
             if showingDetails == false {
-                ProjectList(items: items,
+                ProjectList(items: model.items,
                             cellTap: { item in
-                    detailViewitem = item
+                    model.detailViewitem = item
                     withAnimation(animation) {
                         showingDetails.toggle()
                     }
                 })
                     .zIndex(1)
             } else {
-                DetailView(item: detailViewitem ?? items.first)
+                DetailView(item: $model.detailViewitem)
                     .gesture(
                         DragGesture()
                             .onEnded { _ in
@@ -66,7 +70,7 @@ struct TrendingView: TrendingViewProtocol {
 
 struct TrendingView_Previews : PreviewProvider {
     static var previews: some View {
-        TrendingView(items: previewList)
+        TrendingView(model: TrendingModel(items: previewList))
             .previewInIphone12()
     }
 }

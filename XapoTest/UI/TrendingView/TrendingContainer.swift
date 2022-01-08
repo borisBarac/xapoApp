@@ -17,9 +17,9 @@ struct TrendingContainerView: View {
     var body: some View {
         AsyncContentView(source: viewModel) { list in
             if UIDevice.isIphone() {
-                TrendingView(items: list)
+                TrendingView(model: TrendingModel(items: list))
             } else {
-                TrendingViewIPad(items: list)
+                TrendingViewIPad(model: TrendingModel(items: list))
             }
         }
     }

@@ -9,42 +9,50 @@ import SwiftUI
 import UIKit
 
 struct TrendingViewIPad: View {
-
-    // no need fo @state or something, view is gonna get recreated on changes anyway
-    var items: [ProjectItem]
+    @State
+    var model: TrendingModel
 
     var body: some View {
         NavigationView {
-            MasterViewIpad()
-            DetailViewIpad()
+            MasterViewIpad(model: $model)
+            DetailViewIpad(item: $model.detailViewitem)
         }.accentColor(.white)
 
     }
 }
 
 struct MasterViewIpad: View {
+
+    @Binding
+    var model: TrendingModel
+
     var body: some View {
         ZStack {
             Color
                 .xapobackgroundWithOpacity
                 .edgesIgnoringSafeArea(.all)
-            ProjectList()
+            ProjectList(items: model.items,
+                        cellTap: { item in
+                model.detailViewitem = item
+            })
                 .navigationBarTitle("Trending")
         }.foregroundColor(.white)
     }
 }
 
 struct DetailViewIpad: View {
+    @Binding
+    var item: ProjectItem?
+
     var body: some View {
         ZStack {
             Color
                 .xapobackgroundWithOpacity
                 .edgesIgnoringSafeArea(.all)
-            DetailView()
+            DetailView(item: $item)
         }.foregroundColor(.white)
     }
 }
-
 
 // MARK: - Previews
 
@@ -52,7 +60,7 @@ struct DetailViewIpad: View {
 @available(iOS 15.0, *)
 struct TrendingViewIPad_Previews : PreviewProvider {
     static var previews: some View {
-        TrendingViewIPad(items: previewList)
+        TrendingViewIPad(model: TrendingModel(items: previewList))
             .previewInIpadPro11inch()
             .previewInterfaceOrientation(.landscapeRight)
     }
