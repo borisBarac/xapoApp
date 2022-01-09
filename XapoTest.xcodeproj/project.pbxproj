@@ -862,8 +862,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cmtrounce/SwURL";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.1;
+				kind = exactVersion;
+				version = 0.3.1;
 			};
 		};
 		04B302E0278250C8001077BA /* XCRemoteSwiftPackageReference "Mocker" */ = {

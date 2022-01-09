@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwURL
 
 struct ProjectList: View {
 
@@ -66,10 +67,25 @@ struct ProjectListItem: View {
 
     var item: ProjectItem
 
+    var imageAvatar: some View {
+        Group {
+            if isNotRunningIsPreviewMode {
+                RemoteImageView(url: item.owner.avatar_image_url,
+                                placeholderImage: Image(systemName: "photo.fill"),
+                                transition: .custom(transition: .opacity, animation: .easeOut))
+
+            } else {
+                Image(systemName: "photo.fill")
+                    .resizable()
+                    .scaledToFit()
+            }
+        }
+    }
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center, spacing: 5) {
-                Image(systemName: "photo")
+                imageAvatar
                     .frame(width: 60, height: 60)
                 VStack(alignment: .leading) {
                     Text(item.full_name)

@@ -47,6 +47,11 @@ extension BERepoData {
         let id: Int
         let login: String
         let avatar_url: String
+
+        var avatar_image_url: URL {
+            // set up a backup URL to a placeholder in a cloud
+            return URL(string: avatar_url) ?? URL(string: "https://avatars.githubusercontent.com/u/6574523?v=4")!
+        }
     }
     
 }
