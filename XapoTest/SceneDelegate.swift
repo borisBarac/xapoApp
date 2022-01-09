@@ -13,6 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    @UserDefsStorage(key: "START_PAGE_FLAG")
+    var startPageflag: Bool?
+
     var can = Set<AnyCancellable>()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -23,13 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
 
-        let hostingVC = HostingController(rootView:TrendingContainerView())
+        let hostingVC = (startPageflag ?? true) ? HostingController(rootView: StartPageView()) : HostingController(rootView: TrendingContainerView())
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = hostingVC
         window?.makeKeyAndVisible()
-
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

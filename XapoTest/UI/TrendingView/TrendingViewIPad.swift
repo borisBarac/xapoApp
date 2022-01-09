@@ -16,7 +16,9 @@ struct TrendingViewIPad: View {
         NavigationView {
             MasterViewIpad(model: $model)
             DetailViewIpad(item: $model.detailViewitem)
-        }.accentColor(.white)
+        }
+        .navigationViewStyle(.automatic)
+        .accentColor(.white)
 
     }
 }

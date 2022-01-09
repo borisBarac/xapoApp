@@ -49,3 +49,19 @@ class MockDataServiceWithError: DataServiceProtocol {
         }.eraseToAnyPublisher()
     }
 }
+
+class UserDefaultsStorageMock: UserDefaultsStorage {
+    var values: [String: Any]
+
+    init(values: [String: Any] = [:]) {
+        self.values = values
+    }
+
+    func value(forKey key: String) -> Any? {
+        return values[key]
+    }
+
+    func setValue(_ value: Any?, forKey key: String) {
+        values[key] = value
+    }
+}

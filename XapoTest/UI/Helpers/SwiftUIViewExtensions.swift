@@ -39,6 +39,12 @@ extension View {
     }
 }
 
+extension Image {
+    static var xapoLogo: Image {
+        Image("xapo-logo")
+    }
+}
+
 // MARK: - Preview helpers
 
 extension View {

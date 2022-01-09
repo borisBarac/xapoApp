@@ -19,7 +19,8 @@ struct TrendingContainerView: View {
             if UIDevice.isIphone() {
                 TrendingView(model: TrendingModel(items: list))
             } else {
-                TrendingViewIPad(model: TrendingModel(items: list))
+                // setting the detailView to fist item so we do not empty sceen before we select a item in the MasterDetail view
+                TrendingViewIPad(model: TrendingModel(items: list, detailViewitem: list.first))
             }
         }
     }
