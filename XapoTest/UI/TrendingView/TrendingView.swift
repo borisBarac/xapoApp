@@ -30,6 +30,13 @@ struct TrendingView: View {
         .easeIn(duration: 0.3)
     }
 
+    private var dragGesture: _EndedGesture<DragGesture> {
+        DragGesture()
+            .onEnded { _ in
+                close()
+            }
+    }
+
     var body: some View {
         ZStack {
             Color
@@ -47,18 +54,19 @@ struct TrendingView: View {
                 })
                     .zIndex(1)
             } else {
-                DetailView(item: $model.detailViewitem)
-                    .gesture(
-                        DragGesture()
-                            .onEnded { _ in
-                                withAnimation(animation) {
-                                    showingDetails.toggle()
-                                }
-                            }
-                    )
+                DetailView(item: $model.detailViewitem, xButtonClick: {
+                    close()
+                })
+                    .gesture(dragGesture)
                     .zIndex(2)
                     .transition(.stripes(number: 11))
             }
+        }
+    }
+
+    func close() {
+        withAnimation(animation) {
+            showingDetails.toggle()
         }
     }
 

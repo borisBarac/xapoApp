@@ -66,6 +66,7 @@ extension ProjectList {
 struct ProjectListItem: View {
 
     var item: ProjectItem
+    var xButtonClick: (() -> Void)?
 
     var imageAvatar: some View {
         Group {
@@ -93,6 +94,17 @@ struct ProjectListItem: View {
                         .font(.subheadline)
                 }
                 Spacer()
+                Button(action: {
+                    xButtonClick?()
+                }, label: {
+                    Image(systemName: "xmark.circle")
+                        .resizable()
+                        .scaledToFit()
+                })
+                    .frame(width: 22, height: 22)
+                    .offset(x: -8, y: -8)
+                    .conditionallyShow(xButtonClick != nil)
+
             }
             Text(item.description)
                 .font(.footnote)
@@ -105,12 +117,13 @@ struct ProjectListItem: View {
 struct DetailView: View {
     @Binding
     var item: ProjectItem?
+    var xButtonClick: (() -> Void)?
 
     var body: some View {
         if let item = item, let webViewUrl = URL(string: item.html_url) {
             ZStack {
                 VStack(alignment: .leading, spacing: 8) {
-                    ProjectListItem(item: item)
+                    ProjectListItem(item: item, xButtonClick: xButtonClick)
                         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                     WebView(url: webViewUrl)
                         .conditionallyShow(isNotRunningIsPreviewMode)
